@@ -12,6 +12,7 @@ while True:
     img_init = ImageGrab.grab()
     img_np = np.array(img_init)
     img = detector.findPose(img_np)
+    img = cv2.resize(img, (1280,720))
 
     lmList = detector.findPosition(img)
     print(lmList)
